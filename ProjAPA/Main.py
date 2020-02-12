@@ -1,4 +1,5 @@
 from Arquivo import Arquivo
+from VMP import VMP
 
 import sys
 
@@ -47,8 +48,10 @@ while True:
             sys.exit()
 
         arq = Arquivo()
+        vmp = VMP()
 
         dimensao, capacidade, grafo = arq.leArquivo(caminho)
+        vmp.roteamento(grafo,capacidade,dimensao)
 
         # print(grafo)
 

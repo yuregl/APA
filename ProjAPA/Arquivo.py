@@ -25,9 +25,11 @@ class Arquivo:
 
         for linhaAresta in range(dimLinha, len(leitura) -1):
             aux = leitura[linhaAresta].split()
+            # aux é um vetor com todos os valores da linha
 
             for i in range(len(aux)):
                 aux[i] = int(aux[i])
+                # passa cada linha para inteiro
 
             arraInt.append(aux)
 
