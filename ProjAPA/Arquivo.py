@@ -36,7 +36,4 @@ class Arquivo:
         for i in range(dimensao):
             grafo[i].set_aresta(arraInt[i])
 
-        for i in range(dimensao):
-            print(grafo[i].get_aresta())
-
         return dimensao, capacidade, grafo

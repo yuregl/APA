@@ -53,8 +53,6 @@ while True:
         dimensao, capacidade, grafo = arq.leArquivo(caminho)
         vmp.roteamento(grafo,capacidade,dimensao)
 
-        # print(grafo)
-
     except Exception:
         print("Valor inválido, tente novamente\n")
         pass
