@@ -19,21 +19,23 @@ class VMP :
                                 menor_rota = aux_aresta[j]
                                 prox_indice = j
 
-                if (grafo[indice_atual].get_id() != 0):
-                    final += 1
 
                 carga = carga + grafo[indice_atual].get_value()
                 if(grafo[indice_atual].get_id() != 0 ):
                     rota.append(grafo[indice_atual])
+                    final += 1
+                    print(f"indice {indice_atual}")
+                    print(f"final {final}")
                 grafo[indice_atual].set_visitado(True)
                 indice_atual = prox_indice
 
 
             ArrayRotas.append(rota)
-            grafo[0].set_visitado(True)
+            # grafo[0].set_visitado(True)
 
             if(dimensao == (final+1) ):
                 calculo = Calcula()
                 total_rota = calculo.calcula_rota(ArrayRotas)
+                print(total_rota)
                 return  ArrayRotas, total_rota
 
