@@ -9,7 +9,7 @@ class VMP :
             rota = []
             indice_atual = 0
             prox_indice = 0
-            while(carga+grafo[indice_atual].get_value() <= capacidade):
+            while(carga+grafo[indice_atual].get_value() <= capacidade and (final +1 < dimensao)):
                 menor_rota = 1000
                 aux_aresta = grafo[indice_atual].get_aresta()
                 for j in range(len(grafo[indice_atual].get_aresta())):
