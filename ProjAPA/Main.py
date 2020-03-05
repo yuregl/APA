@@ -1,5 +1,7 @@
 from Arquivo import Arquivo
 from VMP import VMP
+from TwoOpt import TwoOpt
+from Swap import Swap
 
 import sys
 
@@ -51,7 +53,14 @@ while True:
         vmp = VMP()
 
         dimensao, capacidade, grafo = arq.leArquivo(caminho)
-        vmp.roteamento(grafo,capacidade,dimensao)
+        rotas, tam_rota = vmp.roteamento(grafo,capacidade,dimensao)
+
+        # opt = TwoOpt()
+        # opt.opt(rotas)
+
+        swap = Swap()
+        swap.swap(rotas)
+
 
     except Exception:
         print("Valor inválido, tente novamente\n")

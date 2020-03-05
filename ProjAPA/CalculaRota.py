@@ -42,3 +42,17 @@ class Calcula:
                         # print(rota_total)
 
         return rota_total
+
+    def calc_RotaUnica(self, rota):
+        cont_distancia = 0
+
+        for i in range(len(rota) -1):
+            aux_aresta = rota[i].get_aresta()
+            id_prox = rota[i+1].get_id()
+            cont_distancia += rota[i].get_indice_aresta(aux_aresta, id_prox)
+
+        cont_distancia += rota[0].get_indice_aresta(rota[0].get_aresta(), 0)
+        cont_distancia += rota[len(rota) -1].get_indice_aresta(rota[len(rota) -1].get_aresta(), 0)
+
+        return cont_distancia
+

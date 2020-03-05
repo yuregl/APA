@@ -24,8 +24,8 @@ class VMP :
                 if(grafo[indice_atual].get_id() != 0 ):
                     rota.append(grafo[indice_atual])
                     final += 1
-                    print(f"indice {indice_atual}")
-                    print(f"final {final}")
+                    # print(f"indice {indice_atual}")
+                    # print(f"final {final}")
                 grafo[indice_atual].set_visitado(True)
                 indice_atual = prox_indice
 
@@ -36,6 +36,6 @@ class VMP :
             if(dimensao == (final+1) ):
                 calculo = Calcula()
                 total_rota = calculo.calcula_rota(ArrayRotas)
-                print(total_rota)
+                # print(total_rota)
                 return  ArrayRotas, total_rota
 
