@@ -2,6 +2,7 @@ from Arquivo import Arquivo
 from VMP import VMP
 from TwoOpt import TwoOpt
 from Swap import Swap
+from DRandom import DescRandomica
 
 import sys
 
@@ -58,8 +59,10 @@ while True:
         # opt = TwoOpt()
         # opt.opt(rotas)
 
-        swap = Swap()
-        swap.swap(rotas)
+        # swap = Swap()
+        # swap.swap(rotas)
+        desRand = DescRandomica()
+        desRand.descidaRandomica(rotas)
 
 
     except Exception:
