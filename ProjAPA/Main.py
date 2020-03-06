@@ -1,8 +1,6 @@
 from Arquivo import Arquivo
 from VMP import VMP
-from TwoOpt import TwoOpt
-from Swap import Swap
-from DRandom import DescRandomica
+from VND import VND
 
 import sys
 
@@ -50,23 +48,26 @@ while True:
             print(escolha_arquivo)
             sys.exit()
 
-        arq = Arquivo()
-        vmp = VMP()
-
-        dimensao, capacidade, grafo = arq.leArquivo(caminho)
-        rotas, tam_rota = vmp.roteamento(grafo,capacidade,dimensao)
-
-        # opt = TwoOpt()
-        # opt.opt(rotas)
-
-        # swap = Swap()
-        # swap.swap(rotas)
-        desRand = DescRandomica()
-        desRand.descidaRandomica(rotas)
-
 
     except Exception:
         print("Valor inválido, tente novamente\n")
         pass
+
+    arq = Arquivo()
+    vmp = VMP()
+
+    dimensao, capacidade, grafo = arq.leArquivo(caminho)
+    rotas, tam_rota = vmp.roteamento(grafo, capacidade, dimensao)
+
+    vnd = VND()
+    nova_rota, novo_tam_rota = vnd.vnd(rotas, tam_rota)
+    print(novo_tam_rota)
+
+    # opt = TwoOpt()
+    # opt.opt(rotas)
+    # swap = Swap()
+    # swap.swap(rotas)
+    #desRand = DescRandomica()
+    #desRand.descidaRandomica(rotas)
 
     caminho = "../Instancias/"
